@@ -2,3 +2,4 @@
 
 ### Tech Stack
 - Hapi
+- Handlebars

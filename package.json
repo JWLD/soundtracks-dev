@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/JWLD/soundtracks-dev#readme",
   "dependencies": {
+    "env2": "^2.1.1",
+    "handlebars": "^4.0.7",
     "hapi": "^16.1.1",
-    "inert": "^4.2.0"
+    "inert": "^4.2.0",
+    "pg": "^6.1.5",
+    "vision": "^4.1.1"
   }
 }

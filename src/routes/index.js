@@ -1,3 +1,4 @@
 module.exports = [
-  require('./static.js')
+  require('./static'),
+  require('./home')
 ]
