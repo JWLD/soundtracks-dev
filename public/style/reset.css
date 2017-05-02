@@ -1,0 +1,16 @@
+/* DISPLAY */
+
+body, h1, input, div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* FLEX */
+
+section, div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
