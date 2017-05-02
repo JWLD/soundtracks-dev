@@ -1,0 +1,24 @@
+{
+  "name": "soundtracks-dev",
+  "version": "1.0.0",
+  "description": "Soundtracks companion app for populating the database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JWLD/soundtracks-dev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JWLD/soundtracks-dev/issues"
+  },
+  "homepage": "https://github.com/JWLD/soundtracks-dev#readme",
+  "dependencies": {
+    "hapi": "^16.1.1",
+    "inert": "^4.2.0"
+  }
+}
