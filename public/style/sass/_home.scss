@@ -5,6 +5,7 @@ body {
 }
 
 .page-section {
+  @include flexbox;
   padding: $spacing;
   border-bottom: 5px solid #000066;
 }
@@ -15,7 +16,7 @@ body {
   flex-direction: column;
 }
 
-.artist-search {
+.artist-search-input {
   width: calc(#{$artist} * 3 + #{$spacing} * 4);
   padding: $spacing;
   margin-bottom: $spacing;
@@ -24,11 +25,13 @@ body {
 }
 
 .artist-results-wrap {
+  @include flexbox;
   padding: $spacing;
   background-color: #ddd;
 }
 
 .artist-result {
+  @include flexbox;
   flex-direction: column;
 }
 
@@ -50,6 +53,7 @@ body {
 }
 
 .artist-details {
+  @include flexbox;
   width: $artist;
   height: 30px;
   color: #222;

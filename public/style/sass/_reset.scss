@@ -1,5 +1,3 @@
-/* DISPLAY */
-
 body, h1, input, div, button, span {
   margin: 0;
   padding: 0;
@@ -13,12 +11,4 @@ a {
 
 button, a {
   cursor: pointer;
-}
-
-/* FLEX */
-
-section, div, a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
