@@ -14,10 +14,12 @@
   // add event listener to artist search box
   document.getElementById('artist-search').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
-      var url = "/discogs-artists?q=" + e.target.value;
+      var url = "/artists?q=" + e.target.value;
       makeRequest(url, 'GET', function(err, res) {
         if (err) return console.log(err);
-        console.log(res);
+
+        // replace html
+        document.getElementById('artist-wrap').innerHTML = res;
       });
     }
   });

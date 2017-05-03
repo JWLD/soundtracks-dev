@@ -32,11 +32,34 @@ body {
 }
 
 .artist-result {
-  height: var(--artist);
-  width: var(--artist);
-  background-color: #ccc;
+  flex-direction: column;
 }
 
 .artist-result:not(:last-child) {
   margin-right: var(--spacing);
+}
+
+.artist-pic {
+  height: var(--artist);
+  width: var(--artist);
+  border: var(--border) solid transparent;
+  background-color: #ccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.artist-pic:hover {
+  border-color: #eee;
+}
+
+.artist-details {
+  width: var(--artist);
+  height: 30px;
+  color: #222;
+  background-color: #bbb;
+  font: 15px Helvetica;
+}
+
+.artist-details:hover {
+  color: blue;
 }
