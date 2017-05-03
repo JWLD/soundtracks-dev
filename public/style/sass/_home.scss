@@ -1,6 +1,3 @@
-@import './reset.css';
-@import './variables.css';
-
 /* GENERAL */
 
 body {
@@ -8,7 +5,7 @@ body {
 }
 
 .page-section {
-  padding: var(--spacing);
+  padding: $spacing;
   border-bottom: 5px solid #000066;
 }
 
@@ -19,15 +16,15 @@ body {
 }
 
 .artist-search {
-  width: calc(var(--artist) * 3 + var(--spacing) * 4);
-  padding: var(--spacing);
-  margin-bottom: var(--spacing);
+  width: calc(#{$artist} * 3 + #{$spacing} * 4);
+  padding: $spacing;
+  margin-bottom: $spacing;
   border: 1px solid #ccc;
   font: 20px Helvetica;
 }
 
 .artist-results-wrap {
-  padding: var(--spacing);
+  padding: $spacing;
   background-color: #ddd;
 }
 
@@ -36,13 +33,13 @@ body {
 }
 
 .artist-result:not(:last-child) {
-  margin-right: var(--spacing);
+  margin-right: $spacing;
 }
 
 .artist-pic {
-  height: var(--artist);
-  width: var(--artist);
-  border: var(--border) solid transparent;
+  height: $artist;
+  width: $artist;
+  border: 5px solid transparent;
   background-color: #ccc;
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,7 +50,7 @@ body {
 }
 
 .artist-details {
-  width: var(--artist);
+  width: $artist;
   height: 30px;
   color: #222;
   background-color: #bbb;
