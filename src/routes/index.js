@@ -1,4 +1,5 @@
 module.exports = [
   require('./static'),
-  require('./home')
+  require('./home'),
+  require('./artists')
 ]

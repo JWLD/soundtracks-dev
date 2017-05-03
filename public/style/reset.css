@@ -1,0 +1,24 @@
+/* DISPLAY */
+
+body, h1, input, div, button, span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+/* FLEX */
+
+section, div, a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

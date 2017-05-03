@@ -1,3 +1,65 @@
+@import './reset.css';
+@import './variables.css';
+
+/* GENERAL */
+
 body {
-  background-color: lightgray;
+  background-color: #eee;
+}
+
+.page-section {
+  padding: var(--spacing);
+  border-bottom: 5px solid #000066;
+}
+
+/* ARTIST SEARCH */
+
+.page-section.artists {
+  flex-direction: column;
+}
+
+.artist-search {
+  width: calc(var(--artist) * 3 + var(--spacing) * 4);
+  padding: var(--spacing);
+  margin-bottom: var(--spacing);
+  border: 1px solid #ccc;
+  font: 20px Helvetica;
+}
+
+.artist-results-wrap {
+  padding: var(--spacing);
+  background-color: #ddd;
+}
+
+.artist-result {
+  flex-direction: column;
+}
+
+.artist-result:not(:last-child) {
+  margin-right: var(--spacing);
+}
+
+.artist-pic {
+  height: var(--artist);
+  width: var(--artist);
+  border: var(--border) solid transparent;
+  background-color: #ccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.artist-pic:hover {
+  border-color: #eee;
+}
+
+.artist-details {
+  width: var(--artist);
+  height: 30px;
+  color: #222;
+  background-color: #bbb;
+  font: 15px Helvetica;
+}
+
+.artist-details:hover {
+  color: blue;
 }
