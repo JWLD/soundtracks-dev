@@ -1,0 +1,11 @@
+<ul class="ul_album-results-wrap">
+  {{#each data}}
+    <li class="li_album-result">
+      <input class="album i_album-year" value="{{year}}"/>
+      <input class="album i_album-name" value="{{title}}" />
+      <input class="album i_album-id" value="{{main_release}}" />
+      <a class="album a_album-link" href="https://www.discogs.com/release/{{main_release}}" target="_blank">LINK</a>
+      <button class="fa fa-check album b_album-check tick"></button>
+    </li>
+  {{/each}}
+</ul>

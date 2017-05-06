@@ -25,6 +25,13 @@ $li-height: 40px;
   padding: $spacing;
 }
 
+.i_album-year {
+  width: 65px;
+  border: 1px solid $colour3;
+  font: $falbum;
+  text-align: center;
+}
+
 .i_album-name {
   width: 500px;
   border: 1px solid $colour3;

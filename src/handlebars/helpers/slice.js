@@ -1,5 +1,3 @@
 module.exports = (word, length) => {
-  if (word) {
-    return word.slice(0, length);
-  }
-}
+  return word.slice(0, length);
+};

@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run sass && node ./src/start.js",
     "dev": "nodemon ./src/start.js",
-    "sass": "./node_modules/.bin/node-sass ./public/style/sass/main.scss ./public/style/style.css"
+    "sass": "./node_modules/.bin/node-sass ./public/style/sass/main.scss ./public/style/style.css",
+    "precommit": "npm run lint",
+    "lint": "./node_modules/.bin/eslint **.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +30,13 @@
     "pg": "^6.1.5",
     "request": "^2.81.0",
     "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "husky": "^0.13.3"
   }
 }
