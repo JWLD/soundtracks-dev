@@ -1,0 +1,70 @@
+// variables
+$falbum: 18px Helvetica;
+$li-height: 40px;
+
+.ul_album-results-wrap {
+  @include flexbox;
+  flex-direction: column;
+  padding: $spacing;
+  font: 20px $f-main;
+  background-color: $colour1;
+}
+
+.li_album-result {
+  @include flexbox;
+
+  &:not(:last-child) {
+    margin-bottom: $spacing;
+  }
+}
+
+// album list
+.album {
+  height: $li-height;
+  margin-right: $spacing;
+  padding: $spacing;
+}
+
+.i_album-name {
+  width: 500px;
+  border: 1px solid $colour3;
+  font: $falbum;
+}
+
+.i_album-id {
+  width: 125px;
+  border: 1px solid $colour3;
+  font: $falbum;
+  text-align: center;
+}
+
+.a_album-link {
+  @include flexbox;
+  background-color: $colour2;
+  font: $falbum;
+
+  &:hover {
+    color: $hcolour;
+  }
+}
+
+.b_album-check {
+  @include flexbox;
+  width: $li-height;
+  margin: 0;
+  padding: 0;
+  border: 3px solid $colour3;
+  background-color: $colour2;
+
+  &:hover {
+    border-color: $hcolour;
+  }
+}
+
+.tick {
+  color: $gcolour;
+}
+
+.cross {
+  color: $rcolour;
+}

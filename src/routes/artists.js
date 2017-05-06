@@ -19,7 +19,7 @@ module.exports = {
       json: true
     };
 
-    // make request
+    // make request for artists
     Request(options, (error, response, body) => {
       if (error) return reply(`ERROR: ${error}`);
 
@@ -30,4 +30,4 @@ module.exports = {
       return reply(html);
     });
   }
-}
+};

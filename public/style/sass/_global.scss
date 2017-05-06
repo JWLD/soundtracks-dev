@@ -1,0 +1,9 @@
+body {
+  background-color: $colour0;
+}
+
+.page-section {
+  @include flexbox;
+  flex-direction: column;
+  padding: $spacing;
+}
