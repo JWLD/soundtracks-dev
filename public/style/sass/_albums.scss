@@ -2,6 +2,10 @@
 $falbum: 18px Helvetica;
 $li-height: 40px;
 
+.album-container {
+  font: 20px $f-main;
+}
+
 .ul_album-results-wrap {
   @include flexbox;
   flex-direction: column;

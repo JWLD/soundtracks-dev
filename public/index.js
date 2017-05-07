@@ -19,7 +19,10 @@ var devModule = (function() {
   var artistListener = function() {
     document.getElementById('artist-search').addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
+        document.getElementById('artist-results-container').innerHTML = 'Loading...';
+
         var url = '/artists?q=' + e.target.value;
+
         devModule.makeRequest('GET', url, null, function(err, res) {
           if (err) return console.log(err);
 
@@ -38,6 +41,8 @@ var devModule = (function() {
     var artistPics = [].slice.call(document.getElementsByClassName('artist-pic'));
     artistPics.forEach(function(button) {
       button.addEventListener('click', function() {
+        document.getElementById('album-results-container').innerHTML = 'Loading...';
+
         var discogsName = button.dataset.name;
         var discogsId = Number(button.dataset.id);
 

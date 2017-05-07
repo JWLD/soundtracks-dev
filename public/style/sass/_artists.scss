@@ -2,8 +2,13 @@
   border-bottom: 1px solid $colour3;
 }
 
+.artist-container {
+  font: 20px $f-main;
+}
+
 .artist-search-input {
   width: calc(#{$artist} * 3 + #{$spacing} * 4);
+  margin-bottom: $spacing;
   padding: $spacing;
   border: 1px solid $bcolour;
   font: 20px $f-main;
@@ -11,7 +16,6 @@
 
 .artist-results-wrap {
   @include flexbox;
-  margin-top: $spacing;
   padding: $spacing;
   background-color: $colour1;
 }
