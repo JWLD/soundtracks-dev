@@ -1,3 +1,6 @@
 {
-  "ext": "js json hbs"
+  "events": {
+    "start": "npm run sass"
+  },
+  "ext": "js json hbs scss"
 }

@@ -3,6 +3,7 @@ const Request = require('request');
 
 const compileHtml = require('../compile');
 
+/* Make request to Discogs API for artists, and return top 3 results as html */
 module.exports = {
   path: '/artists',
   method: 'GET',
@@ -19,7 +20,7 @@ module.exports = {
       json: true
     };
 
-    // make request
+    // make request for artists
     Request(options, (error, response, body) => {
       if (error) return reply(`ERROR: ${error}`);
 
@@ -30,4 +31,4 @@ module.exports = {
       return reply(html);
     });
   }
-}
+};

@@ -1,6 +1,16 @@
-{{#each data}}
-  <div class="artist-result">
-    <button class="artist-pic" style="background-image:url('{{thumb}}')"></button>
-    <a class="artist-details" target="_blank" href="https://www.discogs.com{{uri}}">{{title}}</a>
-  </div>
-{{/each}}
+<ul class="artist-results-wrap">
+  {{#each data}}
+    <li class="artist-result">
+      <button
+        class="artist-pic"
+        style="background-image:url('{{thumb}}')"
+        data-name="{{title}}"
+        data-id="{{id}}"
+      >
+      </button>
+      <a class="artist-details" target="_blank" href="https://www.discogs.com{{uri}}">
+        {{slice title 16}}
+      </a>
+    </li>
+  {{/each}}
+</ul>

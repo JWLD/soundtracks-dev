@@ -1,5 +1,6 @@
 # soundtracks-dev
 
 ### Tech Stack
-- Hapi
-- Handlebars
+- [Hapi](https://hapijs.com/)
+- [Handlebars](http://handlebarsjs.com/)
+- [Sass](http://sass-lang.com/)

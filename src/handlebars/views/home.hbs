@@ -1,23 +1,15 @@
 <!-- artist search -->
 <section class="page-section artists">
   <input
-    class="artist-search"
+    class="artist-search-input"
     id="artist-search"
     placeholder="Artist"
     autocomplete="off"
   />
-  <div class="artist-results-wrap" id="artist-wrap">
-    <div class="artist-result">
-      <button class="artist-pic"></button>
-      <a class="artist-details">Name</a>
-    </div>
-    <div class="artist-result">
-      <button class="artist-pic"></button>
-      <a class="artist-details">Name</a>
-    </div>
-    <div class="artist-result">
-      <button class="artist-pic"></button>
-      <a class="artist-details">Name</a>
-    </div>
-  </div>
+  <div id="artist-results-container" class="artist-container"></div>
+</section>
+
+<!-- album search -->
+<section class="page-section">
+  <div id="album-results-container" class="album-container"></div>
 </section>

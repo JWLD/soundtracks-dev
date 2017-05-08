@@ -1,5 +1,8 @@
+/* eslint-disable */
+
 module.exports = [
   require('./static'),
   require('./home'),
-  require('./artists')
+  require('./artists'),
+  require('./albums')
 ]

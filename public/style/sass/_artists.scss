@@ -1,0 +1,56 @@
+.page-section.artists {
+  border-bottom: 1px solid $colour3;
+}
+
+.artist-container {
+  font: 20px $f-main;
+}
+
+.artist-search-input {
+  width: calc(#{$artist} * 3 + #{$spacing} * 4);
+  padding: $spacing;
+  border: 1px solid $bcolour;
+  font: 20px $f-main;
+}
+
+.artist-results-wrap {
+  @include flexbox;
+  margin-top: $spacing;
+  padding: $spacing;
+  background-color: $colour1;
+}
+
+.artist-result {
+  @include flexbox;
+  flex-direction: column;
+
+  &:not(:last-child) {
+    margin-right: $spacing;
+  }
+}
+
+.artist-pic {
+  height: $artist;
+  width: $artist;
+  border: 5px solid transparent;
+  background-color: $colour3;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:hover {
+    border-color: $hcolour;
+  }
+}
+
+.artist-details {
+  @include flexbox;
+  width: $artist;
+  height: 35px;
+  color: #222;
+  background-color: $colour2;
+  font: 15px $f-main;
+
+  &:hover {
+    color: $hcolour;
+  }
+}
