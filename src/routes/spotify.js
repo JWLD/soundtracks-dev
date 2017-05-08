@@ -17,10 +17,14 @@ module.exports = {
 
       const topResult = body.albums.items[0];
 
-      return reply({
-        id: topResult.id,
-        imgUrl: topResult.images[1].url
-      });
+      if (topResult) {
+        return reply({
+          id: topResult.id,
+          imgUrl: topResult.images[1].url
+        });
+      }
+
+      return reply({ error: 'No Results' });
     });
   }
 };

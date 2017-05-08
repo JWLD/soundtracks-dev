@@ -77,7 +77,8 @@ var devModule = (function() {
 
         devModule.makeRequest('POST', '/spotify', JSON.stringify(data), function(err, res) {
           if (err) return console.log(err);
-          console.log('Result:', JSON.parse(res));
+
+          return console.log('Result:', JSON.parse(res));
         });
       });
     });
