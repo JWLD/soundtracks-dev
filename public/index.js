@@ -19,8 +19,6 @@ var devModule = (function() {
   var artistListener = function() {
     document.getElementById('artist-search').addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
-        document.getElementById('artist-results-container').innerHTML = 'Loading...';
-
         var url = '/artists?q=' + e.target.value;
 
         devModule.makeRequest('GET', url, null, function(err, res) {
@@ -66,13 +64,10 @@ var devModule = (function() {
 
   // add event listeners to album list check buttons
   var albumListeners = function() {
-    var albumButtons = [].slice.call(document.getElementsByClassName('b_album-check'));
+    var albumButtons = Array.from(document.getElementsByClassName('b_album-check'));
     albumButtons.forEach(function(button) {
       button.addEventListener('click', function() {
-        if (button.classList.contains('fa-check')) {
-          button.classList.add('fa-times', 'cross');
-          button.classList.remove('fa-check', 'tick');
-        } else {
+        if (button.classList.contains('fa-times')) {
           button.classList.add('fa-check', 'tick');
           button.classList.remove('fa-times', 'cross');
         }

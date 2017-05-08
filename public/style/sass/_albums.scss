@@ -43,7 +43,7 @@ $li-height: 40px;
 }
 
 .i_album-id {
-  width: 125px;
+  width: 115px;
   border: 1px solid $colour3;
   font: $falbum;
   text-align: center;
@@ -70,6 +70,10 @@ $li-height: 40px;
   &:hover {
     border-color: $hcolour;
   }
+}
+
+.minus {
+  color: $hcolour;
 }
 
 .tick {
