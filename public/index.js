@@ -55,28 +55,37 @@ var devModule = (function() {
           // render html to display list of albums
           document.getElementById('album-results-container').innerHTML = res;
 
-          // add listeners to album checkboxes
-          albumListeners();
+          // spotifyListeners();
         });
       });
     });
   }
 
-  // add event listeners to album list check buttons
-  var albumListeners = function() {
-    var albumButtons = Array.from(document.getElementsByClassName('b_album-check'));
-    albumButtons.forEach(function(button) {
+  // add event listeners to album spotify buttons
+  var spotifyListeners = function() {
+    var spotifyButtons = Array.from(document.getElementsByClassName('b_spotify'));
+    spotifyButtons.forEach(function(button) {
       button.addEventListener('click', function() {
-        if (button.classList.contains('fa-times')) {
-          button.classList.add('fa-check', 'tick');
-          button.classList.remove('fa-times', 'cross');
+        event.preventDefault();
+
+        // extract search data from DOM and send to server
+        var data = {
+          artist: document.getElementById('album-results-wrap').dataset.artist,
+          album: document.getElementById('album-name-' + button.dataset.index).value
         }
+        console.log('Search:', data);
+
+        devModule.makeRequest('POST', '/spotify', JSON.stringify(data), function(err, res) {
+          if (err) return console.log(err);
+          console.log('Result:', JSON.parse(res));
+        });
       });
     });
   }
 
   // invoke immediately
   artistListener();
+  spotifyListeners();
 
   // export
   return {
