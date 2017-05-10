@@ -14,6 +14,7 @@ CREATE TABLE albums (
   release_date INT NOT NULL,
   discogs_id INT NOT NULL UNIQUE,
   spotify_id TEXT DEFAULT NULL,
+  spotify_url TEXT DEFAULT NULL,
   artist_id INT REFERENCES artists (discogs_id)
 );
 

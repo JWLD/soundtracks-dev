@@ -7,7 +7,7 @@ const compileHtml = require('../compile');
 const getAlbumsFromDiscogs = (id, reply) => {
   // build discogs request
   const options = {
-    url: `https://api.discogs.com/artists/${id}/releases?per_page=200`,
+    url: `https://api.discogs.com/artists/${id}/releases?per_page=20`,
     headers: { 'User-Agent': 'https://github.com/JWLD' },
     json: true
   };

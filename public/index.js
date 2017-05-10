@@ -52,10 +52,13 @@ var devModule = (function() {
         devModule.makeRequest('POST', '/albums', JSON.stringify(data), function(err, res) {
           if (err) return console.log(err);
 
+          // add artist name to album wrap
+          document.getElementById('album-results-container').dataset.artist = discogsName;
+
           // render html to display list of albums
           document.getElementById('album-results-container').innerHTML = res;
 
-          // spotifyListeners();
+          spotifyListeners();
         });
       });
     });
@@ -63,22 +66,32 @@ var devModule = (function() {
 
   // add event listeners to album spotify buttons
   var spotifyListeners = function() {
-    var spotifyButtons = Array.from(document.getElementsByClassName('b_spotify'));
+    var spotifyButtons = Array.from(document.getElementsByClassName('spotify'));
     spotifyButtons.forEach(function(button) {
       button.addEventListener('click', function() {
         event.preventDefault();
+        var index = button.dataset.index;
 
         // extract search data from DOM and send to server
         var data = {
-          artist: document.getElementById('album-results-wrap').dataset.artist,
-          album: document.getElementById('album-name-' + button.dataset.index).value
+          artist: document.getElementById('album-results-container').dataset.artist,
+          album: document.getElementById('album-name-' + index).value
         }
         console.log('Search:', data);
 
         devModule.makeRequest('POST', '/spotify', JSON.stringify(data), function(err, res) {
           if (err) return console.log(err);
 
-          return console.log('Result:', JSON.parse(res));
+          const result = JSON.parse(res);
+          console.log('Result:', result);
+
+          if (!result.error) {
+            document.getElementById('spotify-url-' + index).href = result.url;
+            document.getElementById('spotify-img-url-' + index).value = result.imgUrl;
+            document.getElementById('spotify-id-' + index).value = result.id;
+          } else {
+            document.getElementById('spotify-img-url-' + index).value = 'No Results';
+          }
         });
       });
     });
@@ -86,7 +99,6 @@ var devModule = (function() {
 
   // invoke immediately
   artistListener();
-  spotifyListeners();
 
   // export
   return {
