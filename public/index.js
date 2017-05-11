@@ -89,8 +89,12 @@ var devModule = (function() {
             document.getElementById('spotify-url-' + index).href = result.url;
             document.getElementById('spotify-img-url-' + index).value = result.imgUrl;
             document.getElementById('spotify-id-' + index).value = result.id;
+
+            document.getElementById('spotify-button-' + index).classList.add('success');
+            document.getElementById('spotify-button-' + index).classList.remove('fail');
           } else {
-            document.getElementById('spotify-img-url-' + index).value = 'No Results';
+            document.getElementById('spotify-button-' + index).classList.add('fail');
+            document.getElementById('spotify-button-' + index).classList.remove('success');
           }
         });
       });

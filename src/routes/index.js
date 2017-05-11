@@ -5,5 +5,6 @@ module.exports = [
   require('./home'),
   require('./artists'),
   require('./albums'),
-  require('./spotify')
+  require('./spotify'),
+  require('./add_album')
 ]

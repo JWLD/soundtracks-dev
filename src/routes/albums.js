@@ -4,10 +4,10 @@ const connPool = require('../../database/db_connect');
 const dbQueries = require('../db_queries');
 const compileHtml = require('../compile');
 
-const getAlbumsFromDiscogs = (id, reply) => {
+const getAlbumsFromDiscogs = (artistId, reply) => {
   // build discogs request
   const options = {
-    url: `https://api.discogs.com/artists/${id}/releases?per_page=20`,
+    url: `https://api.discogs.com/artists/${artistId}/releases?per_page=20`,
     headers: { 'User-Agent': 'https://github.com/JWLD' },
     json: true
   };
@@ -32,7 +32,7 @@ const getAlbumsFromDiscogs = (id, reply) => {
     });
 
     // compile and return html using partial
-    const html = compileHtml('album-list', releases);
+    const html = compileHtml('album-list', { releases, artistId });
     return reply(html);
   });
 };
