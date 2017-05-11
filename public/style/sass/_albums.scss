@@ -9,48 +9,62 @@ $li-height: 40px;
 .ul_album-results-wrap {
   @include flexbox;
   flex-direction: column;
-  padding: $spacing;
   font: 20px $f-main;
-  background-color: $colour1;
 }
 
 .li_album-result {
   @include flexbox;
+  padding: $spacing;
+  background-color: $colour1;
 
   &:not(:last-child) {
     margin-bottom: $spacing;
   }
 }
 
-// album list
+.album-form {
+  @include flexbox;
+}
+
+.form-row {
+  @include flexbox;
+  justify-content: flex-start;
+
+  &:not(:last-child) {
+    margin-bottom: $spacing;
+  }
+}
+
 .album {
   height: $li-height;
   margin-right: $spacing;
   padding: $spacing;
 }
 
-.i_album-year {
-  width: 65px;
+
+.i_album-year, .i_type {
+  width: 80px;
   border: 1px solid $colour3;
   font: $falbum;
   text-align: center;
 }
 
-.i_album-name {
-  width: 500px;
+.i_album-name, .i_spotify-img-url {
+  width: 350px;
   border: 1px solid $colour3;
   font: $falbum;
 }
 
-.i_album-id {
-  width: 115px;
+.i_album-id, .i_spotify-id {
+  width: 200px;
   border: 1px solid $colour3;
   font: $falbum;
   text-align: center;
 }
 
-.a_album-link {
+.a_site-link {
   @include flexbox;
+  width: 40px;
   background-color: $colour2;
   font: $falbum;
 
@@ -59,27 +73,29 @@ $li-height: 40px;
   }
 }
 
-.b_album-check {
+.button-wrap {
+
+}
+
+.button {
   @include flexbox;
-  width: $li-height;
+  height: $li-height;
+  width: 90px;
   margin: 0;
   padding: 0;
-  border: 3px solid $colour3;
   background-color: $colour2;
 
-  &:hover {
-    border-color: $hcolour;
+  &.add {
+    margin: 0 0 $spacing 0;
+    font: bold $falbum;
   }
-}
 
-.minus {
-  color: $hcolour;
-}
+  &.spotify {
+    margin: 0;
+    font-size: 30px;
+  }
 
-.tick {
-  color: $gcolour;
-}
-
-.cross {
-  color: $rcolour;
+  &:hover {
+    color: $hcolour;
+  }
 }
