@@ -1,7 +1,7 @@
 <ul class="ul_album-results-wrap" id="album-results-wrap">
   {{#each data.releases}}
-    <li class="li_album-result">
-      <form class="album-form" action="/add" method="POST">
+    <li class="li_album-result" id="album-wrap-{{@index}}">
+      <form class="album-form" id="album-form-{{@index}}" method="POST">
         <div class="input-fields">
           <div class="form-row">
             <a class="album a_site-link" href="https://www.discogs.com/release/{{main_release}}" target="_blank">D</a>
@@ -14,16 +14,16 @@
             <a class="album a_site-link" id="spotify-url-{{@index}}" href="" target="_blank">S</a>
             <select class="album i_type" name="type">
               <option value="Film">Film</option>
-              <option value="Film">Game</option>
-              <option value="Film">TV</option>
-              <option value="Film">Trailer</option>
+              <option value="Game">Game</option>
+              <option value="TV">TV</option>
+              <option value="Trailer">Trailer</option>
             </select>
             <input class="album i_spotify-img-url" id="spotify-img-url-{{@index}}" value="" name="spotify_img"/>
             <input class="album i_spotify-id" id="spotify-id-{{@index}}" value="" name="spotify_id" />
           </div>
         </div>
         <div class="button-wrap">
-          <button class="album button add" type="submit">ADD</button>
+          <button class="album button add" data-index="{{@index}}" type="submit">ADD</button>
           <button class="album button spotify fa fa-spotify" id="spotify-button-{{@index}}" data-index="{{@index}}"></button>
         </div>
       </form>

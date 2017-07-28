@@ -5,9 +5,9 @@ module.exports = {
   path: '/add',
   method: 'POST',
   handler: (request, reply) => {
-    dbQueries.addAlbum(connPool, request.payload, (err, res) => {
-      if (err) return reply(err);
-      return console.log(res);
+    dbQueries.addAlbum(connPool, JSON.parse(request.payload), (err, res) => {
+      if (err) return reply(`ERROR ADDING ALBUM: ${err}`);
+      return reply(res);
     });
   }
 };
