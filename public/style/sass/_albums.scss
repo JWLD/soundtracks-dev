@@ -99,3 +99,15 @@ $li-height: 40px;
     color: $hcolour;
   }
 }
+
+.success {
+  color: $gcolour;
+}
+
+.fail {
+  color: $rcolour;
+}
+
+.albumAdded {
+  background-color: $gcolour;
+}

@@ -13,7 +13,7 @@ var devModule = (function() {
     } else {
       xhr.send();
     }
-  }
+  };
 
   // add event listener to artist search box
   var artistListener = function() {
@@ -32,7 +32,7 @@ var devModule = (function() {
         });
       }
     });
-  }
+  };
 
   // add event listeners to artist buttons
   var artistPicListeners = function() {
@@ -59,10 +59,11 @@ var devModule = (function() {
           document.getElementById('album-results-container').innerHTML = res;
 
           spotifyListeners();
+          addAlbumListeners();
         });
       });
     });
-  }
+  };
 
   // add event listeners to album spotify buttons
   var spotifyListeners = function() {
@@ -89,13 +90,51 @@ var devModule = (function() {
             document.getElementById('spotify-url-' + index).href = result.url;
             document.getElementById('spotify-img-url-' + index).value = result.imgUrl;
             document.getElementById('spotify-id-' + index).value = result.id;
+
+            document.getElementById('spotify-button-' + index).classList.add('success');
+            document.getElementById('spotify-button-' + index).classList.remove('fail');
           } else {
-            document.getElementById('spotify-img-url-' + index).value = 'No Results';
+            document.getElementById('spotify-button-' + index).classList.add('fail');
+            document.getElementById('spotify-button-' + index).classList.remove('success');
           }
         });
       });
     });
-  }
+  };
+
+  // add event listeners to album add buttons
+  var addAlbumListeners = function() {
+    var addAlbumButtons = Array.from(document.getElementsByClassName('add'));
+    addAlbumButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        event.preventDefault();
+        var index = button.dataset.index;
+
+        // extract data from form
+        var formElements = document.getElementById('album-form-' + index).elements;
+        var data = {
+          title: formElements.title.value,
+          year: formElements.year.value,
+          type: formElements.type.value,
+          discogs_id: formElements.discogs_id.value,
+          spotify_id: formElements.spotify_id.value,
+          spotify_img: formElements.spotify_img.value,
+          artist_id: formElements.artist_id.value
+        }
+
+        // convert empty fields to null values
+        if (!data.spotify_id) data.spotify_id = null;
+        if (!data.spotify_img) data.spotify_img = null;
+
+        // post data to server
+        devModule.makeRequest('POST', '/add', JSON.stringify(data), function(err, res) {
+          if (err) return console.log(err);
+
+          document.getElementById('album-wrap-' + index).classList.add('albumAdded');
+        });
+      });
+    });
+  };
 
   // invoke immediately
   artistListener();
